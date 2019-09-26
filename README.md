@@ -1,29 +1,36 @@
-# frontend-developer-challenge
+# Projeto Desafio Linx
 
-## Project setup
+## Após baixar o projeto execute o comando abaixo dentro da pasta do projeto
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Para executar em modo de desenvolvimento execute o comando abaixo
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Comando para compilar e minificar os arquivos para produção
+
 ```
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
-```
+## Sobre o projeto
 
-### Lints and fixes files
-```
-npm run lint
-```
+Para esse desafio, essa página poderia ser tranquilamente construída com HTML, CSS e JS puro. No entanto, preferi adotar um framework pois, na prática este seria apenas o início de um sistema de vendas online.
+Este projeto foi criado utilizando o framework VueJs e o Vuetify como framework para o layout.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Procurei focar nas seguintes características:
+
+- Criar uma página responsiva;
+- Implementar as funcionalidades solicitadas;
+- Organizar o código em vários componentes, deixando-o mais limpo e pouco acoplado;
+- Utilização de um framework para criação de SPA;
+- Seguir os padrões do mock;
+
+Agradeço a oportunidade.
+
+- Veja o [live preview](https://vue-h4jrzmv1j.now.sh/).
