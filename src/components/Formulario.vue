@@ -4,7 +4,7 @@
       <h2>Compartilhe a novidade</h2>
       <p>Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!</p>
     </div>
-    <v-form>
+    <form action="#">
       <v-row>
         <v-col
           lg="4"
@@ -59,7 +59,7 @@
           >Enviar agora</v-btn>
         </v-col>
       </v-row>
-    </v-form>
+    </form>
   </section>
 </template>
 
