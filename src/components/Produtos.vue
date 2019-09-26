@@ -1,5 +1,5 @@
 <template>
-  <section class="claro text-center pb-8">
+  <section class="claro pb-8">
     <h2>Sua seleção especial</h2>
     <v-row>
       <v-col
@@ -11,7 +11,14 @@
         sm="10"
         cols="12"
       >
+        <v-row>
+          <produto-item
+            v-for="item in items"
+            :produto="item"
+            :key="item.id"
+          />
 
+        </v-row>
       </v-col>
     </v-row>
     <v-row>
@@ -46,6 +53,7 @@
 
 <script>
 import axios from 'axios'
+import produtoItem from '@/components/ProdutoItem'
 export default {
   name: 'Produtos',
   data: () => ({
@@ -54,7 +62,7 @@ export default {
     page: 1
   }),
   components: {
-    // produtoItem
+    produtoItem
   },
   created () {
     this.buscarMais()
@@ -79,4 +87,7 @@ export default {
 </script>
 
 <style scoped>
+h2 {
+  text-align: center;
+}
 </style>
