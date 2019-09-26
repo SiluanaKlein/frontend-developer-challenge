@@ -1,0 +1,25 @@
+$background_color: #707070;
+$text_color: #888888;
+
+body {
+  font-family: "Helvetica", "Arial", sans-serif !important;
+}
+
+.escuro {
+  background-color: $background_color;
+  color: #fff;
+}
+
+.claro {
+  color: $text_color;
+}
+
+.custom-btn {
+  text-transform: none;
+  color: $text_color !important;
+}
+
+h2 {
+  margin-bottom: 45px;
+  margin-top: 45px;
+}
