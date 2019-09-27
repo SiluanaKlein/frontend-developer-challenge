@@ -13,7 +13,7 @@
       >
         <v-row>
           <produto-item
-            v-for="item in items"
+            v-for="item in produtos"
             :produto="item"
             :key="item.id"
           />
@@ -48,17 +48,40 @@
         size="64"
       ></v-progress-circular>
     </v-overlay>
+
+    <v-snackbar
+      v-model="snackbar"
+      timeout="3000"
+    >
+      Opss, isso não deveria ter acontecido. Tente novamente mais tarde :(
+      <v-btn
+        color="error"
+        text
+        @click="snackbar = false"
+      >
+        Close
+      </v-btn>
+    </v-snackbar>
   </section>
 </template>
 
 <script>
+// importa o axios para fazer a requisição REST
 import axios from 'axios'
+// componente que contém o template para cada produto
 import produtoItem from '@/components/ProdutoItem'
 export default {
   name: 'Produtos',
   data: () => ({
-    items: [],
+    // exibe a mensagem de erro
+    snackbar: false,
+    // lista de produtos
+    produtos: [],
+
+    // exibe o feedback de carregamento
     overlay: false,
+
+    // contador para buscar proximas paginas
     page: 1
   }),
   components: {
@@ -69,15 +92,21 @@ export default {
   },
   methods: {
     buscarMais () {
+      // habilita a indicação de carregamento
       this.overlay = true
-      axios.get(`${process.env.VUE_APP_URL}/products?page=${this.page}`)
+      axios.get(`https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=${this.page}`)
         .then((response) => {
+          // em caso de sucesso soma o contador para que ele busque a próxima página quando solicitado
           this.page++
-          this.items = this.items.concat(response.data.products)
+          // adiciona os novos resultados à nova lista de produtos existente
+          this.produtos = this.produtos.concat(response.data.products)
+          // finaliza o indicativo de carregamento
           this.overlay = false
         })
         .catch((error) => {
+          // em caso de erro finaliza o indicativo de carregamento e exibe uma mensagem de erro
           this.overlay = false
+          this.snackbar = true
           console.log(error)
         })
     }

@@ -9,7 +9,7 @@
     <div class="text-center custom-border">
       <img
         :src="`http:${produto.image}`"
-        alt="${p.name}"
+        :alt="produto.name"
       >
 
     </div>

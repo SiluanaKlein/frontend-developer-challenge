@@ -27,13 +27,11 @@ export default {
     produtos,
     formulario,
     rodape
-  },
-  data: () => ({
-    //
-  })
+  }
 }
 </script>
 
 <style lang="scss">
+// importa o CSS global
 @import "./assets/css/app.scss";
 </style>
