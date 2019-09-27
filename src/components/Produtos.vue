@@ -94,6 +94,7 @@ export default {
     buscarMais () {
       // habilita a indicação de carregamento
       this.overlay = true
+      // tive que deixar a URL fixa aqui pois o Now não reconheceu o arquivo .env
       axios.get(`https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=${this.page}`)
         .then((response) => {
           // em caso de sucesso soma o contador para que ele busque a próxima página quando solicitado

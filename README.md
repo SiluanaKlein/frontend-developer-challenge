@@ -33,4 +33,4 @@ Procurei focar nas seguintes características:
 
 Agradeço a oportunidade.
 
-- Veja o [live preview](https://linx.siluanaklein.now.sh/).
+- Veja o [live preview](https://frontend-developer-challenge.siluanaklein.now.sh/).
